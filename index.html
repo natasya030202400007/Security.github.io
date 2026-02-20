@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ancaman Siber 2026 | Natasya</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- 1. THEME: BLACK & RED CYBERPUNK --- */
+        :root {
+            --bg-body: #080808;
+            --bg-panel: #101010;
+            --bg-widget: #141414;
+            
+            --primary-red: #d32f2f; /* Merah Tegas */
+            --neon-red: #ff1744;    /* Merah Menyala untuk Highlight */
+            --dark-red: #58000c;
+            
+            --text-main: #e0e0e0;
+            --text-muted: #9e9e9e;
+            
+            --font-tech: 'Share Tech Mono', monospace;
+            --font-body: 'Roboto', sans-serif;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            line-height: 1.8;
+            background-image: linear-gradient(0deg, transparent 24%, rgba(255, 23, 68, .03) 25%, rgba(255, 23, 68, .03) 26%, transparent 27%, transparent 74%, rgba(255, 23, 68, .03) 75%, rgba(255, 23, 68, .03) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255, 23, 68, .03) 25%, rgba(255, 23, 68, .03) 26%, transparent 27%, transparent 74%, rgba(255, 23, 68, .03) 75%, rgba(255, 23, 68, .03) 76%, transparent 77%, transparent);
+            background-size: 50px 50px;
+        }
+
+        /* --- 2. HEADER --- */
+        header {
+            background: linear-gradient(180deg, #000 0%, #111 100%);
+            border-bottom: 3px solid var(--primary-red);
+            padding: 70px 20px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 5px 20px rgba(211, 47, 47, 0.2);
+        }
+
+        header h1 {
+            font-family: var(--font-tech);
+            font-size: 3rem;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0;
+            text-shadow: 2px 2px 0px var(--primary-red);
+        }
+
+        header .subtitle {
+            color: var(--neon-red);
+            font-family: var(--font-tech);
+            font-size: 1.1rem;
+            margin-top: 15px;
+            display: inline-block;
+            border: 1px solid var(--primary-red);
+            padding: 5px 20px;
+            background: rgba(211, 47, 47, 0.1);
+        }
+
+        /* --- 3. LAYOUT GRID --- */
+        .wrapper {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2.5fr 1fr; /* Kiri konten, Kanan Sidebar */
+            gap: 40px;
+            padding: 40px 20px;
+        }
+
+        /* --- 4. MAIN CONTENT STYLING --- */
+        article {
+            background-color: var(--bg-panel);
+            padding: 40px;
+            border: 1px solid #333;
+            box-shadow: 0 0 15px rgba(0,0,0,0.5);
+        }
+
+        h2 {
+            font-family: var(--font-tech);
+            color: var(--neon-red);
+            font-size: 1.8rem;
+            margin-top: 50px;
+            margin-bottom: 25px;
+            border-bottom: 1px dashed #444;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        h2 i { margin-right: 15px; font-size: 1.5rem; }
+
+        h3 {
+            color: white;
+            font-size: 1.3rem;
+            margin-top: 35px;
+            border-left: 4px solid var(--primary-red);
+            padding-left: 15px;
+            background: linear-gradient(90deg, rgba(211,47,47,0.1) 0%, transparent 100%);
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        p { color: #ccc; margin-bottom: 20px; text-align: justify; font-size: 1.05rem; }
+        strong { color: white; font-weight: 700; }
+        
+        ul, ol { margin-bottom: 25px; color: #bbb; }
+        ul li { margin-bottom: 10px; list-style-type: none; position: relative; padding-left: 20px; }
+        ul li::before { content: "►"; color: var(--primary-red); position: absolute; left: 0; font-size: 0.8rem; top: 5px; }
+        ol li { margin-bottom: 10px; padding-left: 10px; }
+        ol li::marker { color: var(--neon-red); font-weight: bold; }
+
+        blockquote {
+            background: #111;
+            border-left: 5px solid var(--neon-red);
+            margin: 20px 0;
+            padding: 20px;
+            font-family: var(--font-tech);
+            color: #fff;
+            font-size: 1.1rem;
+        }
+
+        /* Diagram Box Styling */
+        .diagram-box {
+            background: #000;
+            border: 1px solid #333;
+            padding: 30px;
+            margin: 30px 0;
+            position: relative;
+            text-align: center;
+        }
+        .diagram-caption {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 15px;
+            font-family: var(--font-tech);
+        }
+
+        /* --- 5. SIDEBAR STYLING --- */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .widget {
+            background: var(--bg-widget);
+            border: 1px solid #2a2a2a;
+            padding: 25px;
+            position: relative;
+            overflow: hidden;
+        }
+        .widget::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 3px;
+            background: var(--primary-red);
+        }
+
+        .widget-title {
+            font-family: var(--font-tech);
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #333;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+
+        /* Profile Styles */
+        .profile-card { text-align: center; }
+        .profile-img {
+            width: 100px; height: 100px;
+            border-radius: 50%;
+            background: #000;
+            border: 3px solid var(--primary-red);
+            margin: 0 auto 15px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 3rem; color: var(--neon-red);
+        }
+        
+        /* Mini Visuals in Sidebar */
+        .tech-pill {
+            display: inline-block;
+            background: #222;
+            color: var(--neon-red);
+            padding: 4px 8px;
+            font-size: 0.75rem;
+            border-radius: 4px;
+            margin: 3px;
+            border: 1px solid #444;
+            font-family: var(--font-tech);
+        }
+
+        /* Threat Intel List */
+        .threat-item {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+            border-bottom: 1px dashed #222;
+            padding-bottom: 10px;
+        }
+        .threat-item:last-child { border-bottom: none; margin-bottom: 0; }
+        .threat-icon { color: var(--primary-red); font-size: 1.2rem; min-width: 25px; }
+        .threat-text { font-size: 0.85rem; color: #ccc; line-height: 1.3; }
+        .threat-highlight { color: var(--neon-red); font-weight: bold; display: block; margin-bottom: 2px; }
+
+        .risk-step {
+            background: var(--dark-red); color: white;
+            padding: 10px; margin: 5px; display: inline-block; width: 100px;
+            border: 1px solid var(--neon-red); font-size: 0.9rem;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: #050505;
+            color: #555;
+            font-size: 0.9rem;
+            border-top: 1px solid #222;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 900px) {
+            .wrapper { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>ANCAMAN SIBER 2026</h1>
+        <div class="subtitle">RISIKO BESAR DI BALIK LONJAKAN EKONOMI DIGITAL</div>
+    </header>
+
+    <div class="wrapper">
+        
+        <main>
+            <article>
+                <p style="font-size: 1.2rem; border-bottom: 1px solid #333; padding-bottom: 20px;">
+                    <strong>Executive Summary:</strong><br>
+                    Pertumbuhan ekonomi digital yang melesat tajam membawa banyak kemudahan bagi transaksi modern. Namun, di balik kemegahan inovasi tersebut, ada bayang-bayang gelap yang mengintai: <strong>Ancaman Siber</strong>. Semakin besar sebuah platform digital, semakin menggiurkan pula platform tersebut di mata para penjahat siber. Mari kita bedah anatomi serangan siber dan bagaimana siklus tersebut melumpuhkan perusahaan.
+                </p>
+
+                <h2><i class="fas fa-exclamation-triangle"></i> 1. Mengidentifikasi Risiko Utama</h2>
+                <p>
+                    Berdasarkan tren keamanan siber terbaru, ekosistem ekonomi digital saat ini dikelilingi oleh ancaman-ancaman serius. Beberapa risiko paling fatal yang sering dibahas meliputi:
+                </p>
+                <ul>
+                    <li><strong>Evolusi Ransomware:</strong> Bukan lagi sekadar virus biasa, ransomware kini bekerja secara terstruktur untuk mengunci data krusial perusahaan dan menuntut tebusan dalam jumlah masif.</li>
+                    <li><strong>Kebocoran Data (Data Breach):</strong> Pencurian data pribadi pelanggan atau data transaksi finansial yang sering kali berujung pada jual-beli data di <em>dark web</em>.</li>
+                    <li><strong>Serangan Berbasis AI:</strong> Peretas kini memanfaatkan Kecerdasan Buatan (AI) untuk menciptakan email <em>phishing</em> yang sangat meyakinkan atau memecahkan sandi jauh lebih cepat.</li>
+                    <li><strong>Supply Chain Attacks:</strong> Serangan pada penyedia layanan pihak ketiga yang digunakan oleh perusahaan ekonomi digital sebagai "pintu masuk" rahasia ke server utama.</li>
+                </ul>
+
+                <h2><i class="fas fa-bomb"></i> 2. Efek Domino: Dampak Sistem Jebol</h2>
+                <p>
+                    Ketika salah satu dari risiko di atas benar-benar terjadi, efek dominonya bisa menghancurkan bisnis secara menyeluruh. Dampaknya meliputi:
+                </p>
+                <ol>
+                    <li><strong>Kerugian Finansial:</strong> Kehilangan uang secara langsung akibat pencurian atau pembayaran tebusan, serta denda regulasi dari pemerintah.</li>
+                    <li><strong>Kehancuran Reputasi:</strong> Hilangnya kepercayaan konsumen yang takut dan enggan bertransaksi di platform tersebut.</li>
+                    <li><strong>Kelumpuhan Operasional:</strong> Layanan digital (aplikasi/web) menjadi <em>down</em> atau tidak bisa diakses sama sekali, menghentikan roda bisnis.</li>
+                    <li><strong>Konsekuensi Hukum:</strong> Tuntutan hukum perdata karena dianggap lalai dalam melindungi data pengguna (sesuai UU Perlindungan Data Pribadi).</li>
+                </ol>
+
+                <h2><i class="fas fa-search-dollar"></i> 3. Studi Kasus: Anatomi Serangan</h2>
+                <p>
+                    Untuk memahami bagaimana risiko ini bekerja di dunia nyata, mari kita petakan sebuah skenario penyusupan Ransomware menggunakan kerangka siklus manajemen risiko.
+                </p>
+
+                <blockquote>
+                    Pola: Security Threat ➔ exploits ➔ Security Vulnerability ➔ give rise to ➔ Risks ➔ can damage ➔ IT Asset
+                </blockquote>
+
+                <p>Berikut adalah 4 fase utama dari siklus ancaman tersebut, beserta langkah pengendaliannya:</p>
+
+                <h3>1. Security Threat (Ancaman Keamanan)</h3>
+                <p>
+                    Semuanya dimulai dari ancaman aktif. Dalam kasus ini, pelakunya adalah <strong>Hacker atau Cyber Criminal Group</strong>. Mereka aktif mencari target perusahaan digital dengan mengirimkan email <em>phishing</em> yang sudah disusupi <em>malware</em> jahat.
+                </p>
+
+                <h3>2. Security Vulnerability (Celah Keamanan)</h3>
+                <p>
+                    Ancaman tersebut tidak akan berhasil tanpa adanya celah. Serangan ini biasanya mengeksploitasi <strong>Human Error (Kelalaian Karyawan)</strong> atau <strong>Sistem Email yang Lemah</strong>. Celah ini terbuka ketika karyawan kurang waspada dan tidak sadar mengklik <em>link</em> berbahaya, atau ketika sistem gagal memfilter lampiran tersebut.
+                </p>
+
+                <h3>3. Risks (Risiko yang Terjadi)</h3>
+                <p>
+                    Begitu celah berhasil ditembus, hal ini memunculkan risiko yang nyata: <strong>Infeksi Ransomware</strong>. Eksploitasi ini membuat sistem komputer internal terinfeksi, file-file penting terkunci rapat (terenkripsi), dan operasional perusahaan berhenti total saat itu juga.
+                </p>
+
+                <h3>4. IT Asset (Aset IT Terdampak)</h3>
+                <p>
+                    Pada akhirnya, risiko ini berujung pada pengrusakan aset vital. Target utamanya adalah <strong>Database Server & Data Pelanggan</strong>. Risiko ini merusak server tempat data transaksi dan data sensitif pelanggan disimpan, yang mana merupakan "nyawa" utama dari bisnis ekonomi digital.
+                </p>
+
+                <h3><i class="fas fa-shield-alt" style="margin-right:10px; color:var(--neon-red);"></i> Controls (Langkah Pengendalian)</h3>
+                <p>
+                    Untuk memutus rantai serangan dari <em>Threat</em> hingga ke <em>IT Asset</em>, perusahaan membutuhkan kontrol yang kuat. Ini mencakup <strong>pelatihan kesadaran keamanan (security awareness)</strong> bagi karyawan agar tidak mudah tertipu <em>phishing</em>, memperbarui <strong>sistem filter email</strong>, serta melakukan <strong>pencadangan (backup) data</strong> secara rutin di server fisik yang terpisah.
+                </p>
+
+                <hr style="border-color: #333; margin: 40px 0;">
+                
+                <p style="font-size: 1.2rem; color: #fff;">
+                    <strong>Kesimpulan:</strong>
+                </p>
+                <p>
+                    Membangun ekonomi digital yang kuat tidak hanya soal seberapa cepat aplikasinya, tapi seberapa tebal tembok pertahanannya. Keamanan siber bukan lagi sekadar opsi operasional, melainkan fondasi utama dari kepercayaan publik.
+                </p>
+            </article>
+        </main>
+
+
+        <aside>
+            
+            <div class="widget">
+                <div class="widget-title">AUTHOR BIO</div>
+                <div class="profile-card">
+                    <div class="profile-img">
+                        <i class="fas fa-user-secret"></i>
+                    </div>
+                    <h3 style="margin:0; color:white; border:none; padding:0; background:none;">Natasya</h3>
+                    <div style="font-size:0.8rem; color:var(--neon-red); margin-bottom:10px; font-family:var(--font-tech);">
+                        STUDENT ID: 030202400007
+                    </div>
+                    <p style="font-size:0.85rem; color:#aaa; margin-top:10px;">
+                        Mahasiswa IT President University<br>
+                        Subject: Security Risk Management
+                    </p>
+                </div>
+            </div>
+
+            <div class="widget">
+                <div class="widget-title">
+                    <span>NAVIGATION</span>
+                    <i class="fas fa-compass"></i>
+                </div>
+                <ul style="padding:0; margin:0;">
+                    <li style="border-bottom:1px solid #222; padding-bottom:5px; padding-left:0;">1. Risiko Utama</li>
+                    <li style="border-bottom:1px solid #222; padding-bottom:5px; padding-left:0;">2. Efek Domino</li>
+                    <li style="border-bottom:1px solid #222; padding-bottom:5px; padding-left:0;">3. Studi Kasus</li>
+                    <li style="border-bottom:1px solid #222; padding-bottom:5px; padding-left:0;">4. Anatomi Serangan</li>
+                    <li style="padding-left:0;">5. Controls</li>
+                </ul>
+            </div>
+
+            <div class="widget">
+                <div class="widget-title">
+                    <span>THREAT INTEL (Top 10)</span>
+                    <i class="fas fa-radiation"></i>
+                </div>
+                
+                <div class="threat-item">
+                    <div class="threat-icon"><i class="fas fa-clock"></i></div>
+                    <div class="threat-text">
+                        <span class="threat-highlight">11 Detik</span>
+                        Frekuensi serangan Ransomware global.
+                    </div>
+                </div>
+                <div class="threat-item">
+                    <div class="threat-icon"><i class="fas fa-eye-slash"></i></div>
+                    <div class="threat-text">
+                        <span class="threat-highlight">280 Hari</span>
+                        Waktu rata-rata mendeteksi kebocoran data.
+                    </div>
+                </div>
+                <div class="threat-item">
+                    <div class="threat-icon"><i class="fas fa-user-times"></i></div>
+                    <div class="threat-text">
+                        <span class="threat-highlight">95% Error</span>
+                        Disebabkan oleh kesalahan manusia (Human Error).
+                    </div>
+                </div>
+                <div class="threat-item">
+                    <div class="threat-icon"><i class="fas fa-money-bill-wave"></i></div>
+                    <div class="threat-text">
+                        <span class="threat-highlight">$10.5 Triliun</span>
+                        Estimasi kerugian cybercrime tahun 2025.
+                    </div>
+                </div>
+                <div class="threat-item">
+                    <div class="threat-icon"><i class="fas fa-envelope-open-text"></i></div>
+                    <div class="threat-text">
+                        <span class="threat-highlight">3.4 Miliar</span>
+                        Email phishing dikirim setiap hari.
+                    </div>
+                </div>
+            </div>
+
+            <div class="widget">
+                <div class="widget-title">
+                    <span>SECURITY TOOLKIT</span>
+                    <i class="fas fa-toolbox"></i>
+                </div>
+                <p style="font-size:0.8rem; color:#888;">Perangkat lunak standar industri:</p>
+                <div>
+                    <span class="tech-pill">Nmap</span>
+                    <span class="tech-pill">Wireshark</span>
+                    <span class="tech-pill">Metasploit</span>
+                    <span class="tech-pill">Burp Suite</span>
+                    <span class="tech-pill">Kali Linux</span>
+                    <span class="tech-pill">Snort IDS</span>
+                    <span class="tech-pill">Nessus</span>
+                </div>
+            </div>
+
+            <div class="widget">
+                <div class="widget-title">
+                    <span>REFERENCES</span>
+                    <i class="fas fa-book-journal-whills"></i>
+                </div>
+                <ul class="ref-list" style="padding:0; margin:0;">
+                    <li style="padding-left:0; border-bottom:1px dashed #222; padding-bottom:5px;">
+                        <i class="fas fa-newspaper" style="color:var(--primary-red); margin-right:5px;"></i>
+                        <strong>Artikel Analisis:</strong><br>
+                        <span style="font-size:0.8rem">Ancaman Siber 2026 (Kompas)</span> 
+                    </li>
+                    <li style="padding-left:0; border-bottom:1px dashed #222; padding-bottom:5px; padding-top:5px;">
+                        <i class="fas fa-file-powerpoint" style="color:var(--primary-red); margin-right:5px;"></i>
+                        <strong>Lecture Slides:</strong><br>
+                        <span style="font-size:0.8rem">Security Risk Management</span> 
+                    </li>
+                </ul>
+            </div>
+
+        </aside>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Natasya - President University IT Student.<br>
+        Dibuat untuk memenuhi tugas Security Risk Management.</p>
+    </footer>
+
+</body>
+</html>
